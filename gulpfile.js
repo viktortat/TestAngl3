@@ -100,6 +100,14 @@ gulp.task('clean', function (cb) {
     rimraf(path.clean, cb);
 });
 
+
+
+gulp.task("build1", function(){
+    return gulp.src(['js/app.min.js', 'index.html', 'img/**', 'fonts/**', {base: './'}])
+    .pipe(gulp.dest('build/test1'));
+});
+
+
 gulp.task('build:html', function () {
     gulp.src('./app/*.html')
         .pipe(changed('./build'))
